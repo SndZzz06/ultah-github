@@ -77,9 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const counterInterval = setInterval(() => {
             currentCount += increment;
             if (currentCount >= targetCount) {
-                currentCount = targetCount;
-                clearInterval(counterInterval);
-            }
+    currentCount = targetCount;
+    clearInterval(counterInterval);
+
+    // Confetti muncul setelah selesai menghitung
+    fireConfetti();
+}
             daysCount.textContent = currentCount.toLocaleString('id-ID');
         }, 16);
     });
@@ -89,30 +92,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('close-modal');
 
     const fireConfetti = () => {
-        const duration = 3000;
-        const end = Date.now() + duration;
 
-        (function frame() {
-            confetti({
-                particleCount: 5,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 },
-                colors: ['#ff758c', '#ff7eb3', '#ffffff']
-            });
-            confetti({
-                particleCount: 5,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 },
-                colors: ['#ff758c', '#ff7eb3', '#ffffff']
-            });
+    confetti({
+        particleCount: 180,
+        spread: 120,
+        origin: { y: 0.6 }
+    });
 
-            if (Date.now() < end) {
-                requestAnimationFrame(frame);
-            }
-        }());
-    };
+    setTimeout(() => {
+        confetti({
+            particleCount: 120,
+            angle: 60,
+            spread: 70,
+            origin: { x: 0 }
+        });
+
+        confetti({
+            particleCount: 120,
+            angle: 120,
+            spread: 70,
+            origin: { x: 1 }
+        });
+    }, 400);
+
+};
 
     surpriseBtn.addEventListener('click', () => {
         modal.classList.add('show');
