@@ -452,16 +452,16 @@ modal{
 .modal-content{
     position: relative;
     width: 90%;
-    max-width: 500px;
-    padding: 45px;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: #2a1433;
+    border: 2px solid #ff6f91;
     border-radius: 25px;
-    background: linear-gradient(to bottom right,#2b1029,#1a0b1c);
-    border:2px solid #ff758c;
-    box-shadow:0 0 40px rgba(255,117,140,.5);
-    text-align:center;
-    z-index:20;
-    transform:scale(.8);
-    transition:.4s;
+    padding: 35px 30px;
+    text-align: center;
+    box-shadow: 0 0 35px rgba(255,111,145,.45);
 }
 
 .modal.show .modal-content{
@@ -483,19 +483,20 @@ modal{
 
 .flower-left,
 .flower-right{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    z-index:5;
-    pointer-events:none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 220px;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .flower-left{
-    left:calc(50% - 520px);
+    left: -180px;
 }
 
 .flower-right{
-    right:calc(50% - 520px);
+    right: -180px;
 }
 
 .flower-left img,
@@ -529,6 +530,71 @@ modal{
     .flower-left,
     .flower-right{
         display:none;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .modal-content{
+        width:92%;
+        max-width:340px;
+        padding:25px 20px;
+        border-radius:20px;
+    }
+
+    .modal-content h2{
+        font-size:32px;
+    }
+
+    .modal-content p{
+        font-size:17px;
+        line-height:1.6;
+    }
+
+    .flower-left,
+    .flower-right{
+        width:110px;
+        opacity:.95;
+    }
+
+    .flower-left{
+        left:-55px;
+    }
+
+    .flower-right{
+        right:-55px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .modal-content{
+        width:94%;
+        max-width:300px;
+        padding:20px 18px;
+    }
+
+    .modal-content h2{
+        font-size:28px;
+    }
+
+    .modal-content p{
+        font-size:16px;
+    }
+
+    .flower-left,
+    .flower-right{
+        width:90px;
+    }
+
+    .flower-left{
+        left:-40px;
+    }
+
+    .flower-right{
+        right:-40px;
     }
 
 }
