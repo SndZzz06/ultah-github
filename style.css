@@ -430,9 +430,7 @@ h1, h2, h3, .modal-title {
     .gallery-card { max-width: 100%; }
 }
 
-/* ================= MODAL ================= */
-
-.modal{
+modal{
     position: fixed;
     inset: 0;
     display: flex;
@@ -531,6 +529,38 @@ h1, h2, h3, .modal-title {
     .flower-left,
     .flower-right{
         display:none;
+    }
+
+}
+
+.petal{
+
+    position:fixed;
+
+    top:-50px;
+
+    z-index:9999;
+
+    animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+    from{
+
+        transform:
+        translateY(-50px)
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
     }
 
 }

@@ -70,31 +70,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================
     function fireConfetti() {
 
+    const duration = 3000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+
         confetti({
-            particleCount:180,
-            spread:120,
-            origin:{y:0.6}
+            particleCount: 8,
+            angle: 60,
+            spread: 70,
+            origin: { x: 0 },
+            zIndex: 99999
         });
 
-        setTimeout(()=>{
+        confetti({
+            particleCount: 8,
+            angle: 120,
+            spread: 70,
+            origin: { x: 1 },
+            zIndex: 99999
+        });
 
-            confetti({
-                particleCount:120,
-                angle:60,
-                spread:70,
-                origin:{x:0}
-            });
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
 
-            confetti({
-                particleCount:120,
-                angle:120,
-                spread:70,
-                origin:{x:1}
-            });
+    })();
 
-        },400);
-
-    }
+}
 
     // =========================
     // FLOWER EFFECT
