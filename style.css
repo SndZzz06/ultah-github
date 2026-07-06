@@ -429,3 +429,29 @@ h1, h2, h3, .modal-title {
     .message-back p { font-size: 0.95rem; }
     .gallery-card { max-width: 100%; }
 }
+
+.flower{
+    position:fixed;
+    font-size:40px;
+    z-index:9999;
+    pointer-events:none;
+    animation:flower 3s ease forwards;
+}
+
+@keyframes flower{
+
+    0%{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    30%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-120px) rotate(360deg) scale(1.5);
+    }
+
+}
