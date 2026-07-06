@@ -430,134 +430,107 @@ h1, h2, h3, .modal-title {
     .gallery-card { max-width: 100%; }
 }
 
-.flower{
-    position:fixed;
-    font-size:40px;
-    z-index:9999;
-    pointer-events:none;
-    animation:flower 3s ease forwards;
+/* ================= MODAL ================= */
+
+.modal{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.8);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+    z-index: 9999;
 }
 
-@keyframes flower{
+.modal.show{
+    opacity: 1;
+    visibility: visible;
+}
 
-    0%{
-        opacity:0;
-        transform:scale(.5);
-    }
+.modal-content{
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    padding: 45px;
+    border-radius: 25px;
+    background: linear-gradient(to bottom right,#2b1029,#1a0b1c);
+    border:2px solid #ff758c;
+    box-shadow:0 0 40px rgba(255,117,140,.5);
+    text-align:center;
+    z-index:20;
+    transform:scale(.8);
+    transition:.4s;
+}
 
-    30%{
-        opacity:1;
-    }
+.modal.show .modal-content{
+    transform:scale(1);
+}
 
-    100%{
-        opacity:0;
-        transform:translateY(-120px) rotate(360deg) scale(1.5);
-    }
+/* Tombol X */
 
+.close{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:32px;
+    cursor:pointer;
+    color:white;
+}
+
+/* ================= BUNGA ================= */
+
+.flower-left,
+.flower-right{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:5;
+    pointer-events:none;
 }
 
 .flower-left{
-
-    position:fixed;
-
-    left:8%;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    width:320px;
-
-    height:420px;
-
-    background:url("images/bunga-kiri.png") no-repeat center;
-
-    background-size:contain;
-
-    z-index:999;
-
-    animation:fadeFlower .8s;
-
+    left:calc(50% - 520px);
 }
 
 .flower-right{
-
-    position:fixed;
-
-    right:8%;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    width:320px;
-
-    height:420px;
-
-    background:url("images/bunga-kanan.png") no-repeat center;
-
-    background-size:contain;
-
-    z-index:999;
-
-    animation:fadeFlower .8s;
-
+    right:calc(50% - 520px);
 }
 
-@keyframes fadeFlower{
+.flower-left img,
+.flower-right img{
+    width:280px;
+    height:auto;
+    filter:drop-shadow(0 0 20px rgba(255,117,140,.8));
+}
 
-    from{
+/* Responsive */
 
-        opacity:0;
+@media(max-width:1200px){
 
-        transform:translateY(-50%) scale(.5);
-
+    .flower-left{
+        left:20px;
     }
 
-    to{
+    .flower-right{
+        right:20px;
+    }
 
-        opacity:1;
-
-        transform:translateY(-50%) scale(1);
-
+    .flower-left img,
+    .flower-right img{
+        width:210px;
     }
 
 }
-.flower-left,
-.flower-right{
 
-    filter:drop-shadow(0 0 35px #ff69b4);
+@media(max-width:900px){
 
-}
-
-.petal{
-
-    position:fixed;
-
-    top:-50px;
-
-    z-index:9999;
-
-    animation:fall linear forwards;
-
-}
-
-@keyframes fall{
-
-    from{
-
-        transform:
-        translateY(-50px)
-        rotate(0deg);
-
-    }
-
-    to{
-
-        transform:
-        translateY(110vh)
-        rotate(720deg);
-
+    .flower-left,
+    .flower-right{
+        display:none;
     }
 
 }
