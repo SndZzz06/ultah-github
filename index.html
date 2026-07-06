@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Sayang ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="title">Selamat Ulang Tahun, <span class="highlight">Sayang!</span></h1>
+            <p class="subtitle">Di hari spesial ini, aku ingin mengungkapkan segalanya untukmu.</p>
+            <button id="scroll-down" class="btn-primary">Lihat Kejutan ⬇</button>
+        </div>
+    </header>
+    <section id="date-calculator" class="section date-section">
+        <div class="date-container">
+            <h2 class="section-title" style="margin-bottom: 20px;">Jejak Langkahmu</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: var(--text-secondary);">Masukkan tanggal lahirmu sayang:</p>
+            <div class="input-group">
+                <input type="date" id="anniversary-date" class="date-input">
+                <button id="calc-date-btn" class="btn-primary">Hitung</button>
+            </div>
+            <div id="date-result" class="date-result hidden">
+                <p>Terima kasih sudah terlahir ke dunia ini. Kamu telah membawa kebahagiaan selama <br><span id="days-count" class="highlight-number">0</span><br> hari berturut-turut!</p>
+            </div>
+        </div>
+    </section>
+    <section id="gallery" class="section gallery-section">
+        <h2 class="section-title">Rasa Sayangku Untukmu</h2>
+        <div class="gallery-container">
+            <div class="gallery-card">
+                <div class="img-wrapper">
+                    <img src="images/foto1.jpeg" alt="Momen romantis">
+                </div>
+                <div class="card-content">
+                    <h3>Cintaku Padamu</h3>
+                    <p>Tidak ada kata yang cukup untuk mengungkapkan betapa berartinya dirimu bagiku dan tidak kata yang pas untuk menjelaskan betapa beruntungnya aku punya kamu.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="img-wrapper">
+                    <img src="images/foto2.jpeg" alt="Ulang tahun">
+                </div>
+                <div class="card-content">
+                    <h3>Menjadi Rumah Bagiku</h3>
+                    <p>Aku selalu ngerasa nyaman ketika saat bersama denganmu dan aku sangat senang ketika mendengarkan semua keluh kesahmu.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="img-wrapper">
+                    <img src="images/foto4.jpeg" alt="Bunga romantis">
+                </div>
+                <div class="card-content">
+                    <h3>Selalu Bersama</h3>
+                    <p>Aku berharap kedepannya kita bisa terus bersama dan ketika ada masalah, kita bisa menghadapinya bersama.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="img-wrapper">
+                    <img src="images/foto5.jpeg" alt="Tawa Bahagia">
+                </div>
+                <div class="card-content">
+                    <h3>Anugerah Terindah</h3>
+                    <p>Memilikimu adalah hadiah dan anugerah terindah yang pernah Tuhan berikan kepadaku.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="img-wrapper">
+                    <img src="images/foto3.jpeg" alt="Makan Malam Romantis">
+                </div>
+                <div class="card-content">
+                    <h3>Bahagiamu, Bahagiaku</h3>
+                    <p>Melihat senyum manismu selalu menjadi pemandangan paling indah di duniaku.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="img-wrapper">
+                    <img src="images/foto6.jpeg" alt="Kejutan Manis">
+                </div>
+                <div class="card-content">
+                    <h3>Kekasih Hatiku</h3>
+                    <p>Terima kasih sudah menerimaku, melengkapiku, mencintaiku apa adanya, dan maaf apabila aku belum menjadi yang kamu inginkan.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="img-wrapper">
+                    <img src="images/foto7.jpeg" alt="Kenangan Tak Terlupakan">
+                </div>
+                <div class="card-content">
+                    <h3>Harapan Masa Depan</h3>
+                    <p>Mari kita terus menggenggam tangan satu sama lain, mengukir cerita cinta dan berkembang bersama menjadi pasangan yang lebih baik bukan hanya dalam kebahagiaan, tapi juga dalam kesulitan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section messages-section">
+        <h2 class="section-title">Ungkapan Isi Hatiku</h2>
+        <div class="messages-container">
+            <div class="message-box">
+                <div class="message-inner">
+                    <div class="message-front">
+                        <span class="icon">💖</span>
+                        <h3>Terima Kasih</h3>
+                        <p>(Sentuh Aku)</p>
+                    </div>
+                    <div class="message-back">
+                        <p>Terima kasih sudah selalu ada, menjadi pendengar terbaik, dan memberikan warna terindah dalam hari-hariku.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="message-box">
+                <div class="message-inner">
+                    <div class="message-front">
+                        <span class="icon">✨</span>
+                        <h3>Harapanku</h3>
+                        <p>(Sentuh Aku)</p>
+                    </div>
+                    <div class="message-back">
+                        <p>Semoga semua mimpimu terwujud, kamu selalu dikelilingi kebahagiaan, dan kita terus bersama selamanya. Karena kamu juga pantas untuk merasakan rasa bahagia yang sebenarnya.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="message-box">
+                <div class="message-inner">
+                    <div class="message-front">
+                        <span class="icon">🌹</span>
+                        <h3>Satu Hal...</h3>
+                        <p>(Sentuh Aku)</p>
+                    </div>
+                    <div class="message-back">
+                        <p>Aku sangat menyayangimu, lebih dari kata-kata yang bisa kuucapkan atau tulisan yang bisa kurangkai.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="message-box">
+                <div class="message-inner">
+                    <div class="message-front">
+                        <span class="icon">😊</span>
+                        <h3>Senyummu</h3>
+                        <p>(Sentuh Aku)</p>
+                    </div>
+                    <div class="message-back">
+                        <p>Setiap kali aku melihatmu tersenyum, semua bebanku hilang seketika. Teruslah tersenyum untukku karena ketika aku melihatmu tersenyum ceria, hatiku juga ikut senang.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="message-box">
+                <div class="message-inner">
+                    <div class="message-front">
+                        <span class="icon">💍</span>
+                        <h3>Janji Setia</h3>
+                        <p>(Sentuh Aku)</p>
+                    </div>
+                    <div class="message-back">
+                        <p>Aku berjanji akan selalu ada untukmu, di saat senang maupun saat kita sedang diuji, lalu ketika ada hal yang membuatmu sedih jangan sungkan untuk berbagi denganku, aku akan berusaha membantumu dengan sepenuh hati.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="message-box">
+                <div class="message-inner">
+                    <div class="message-front">
+                        <span class="icon">👑</span>
+                        <h3>Kebanggaanku</h3>
+                        <p>(Sentuh Aku)</p>
+                    </div>
+                    <div class="message-back">
+                        <p>Milikimu adalah hal terbaik yang pernah terjadi padaku. Aku sangat bangga bisa memanggilmu sayang.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section final-section">
+        <div class="surprise-box">
+            <h2>Ada satu lagi untukmu...</h2>
+            <button id="surprise-btn" class="btn-primary pulse">Klik Disini</button>
+        </div>
+    </section>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2 class="modal-title">Love You Sayanggkuuuu!❤️</h2>
+            <p class="modal-text">Selamat bertambah usia Sayangkuuu, Cintakuu, Lucunyaa akuu, Imuttnyaa akuu. Semoga di umur kamu yang sekarang ini kamu selalu diberi kebahagiaan, semoga berkah selalu menyertaimu, semoga apa yang kamu inginkan segera terwujud, pokonya doa terbaik buat kamu sayanggg.</p>
+            <p class="modal-text">dari pacar ganteng kamu : Sandi😁😁😁</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
