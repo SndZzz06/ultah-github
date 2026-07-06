@@ -209,6 +209,45 @@ document.addEventListener('DOMContentLoaded', () => {
         showFlowers();
 
     });
+    surpriseBtn.addEventListener("click",()=>{
+
+    modal.classList.add("show");
+
+    fireConfetti();
+
+    createPetals();
+
+});
+
+    function createPetals(){
+
+    const petals=["🌸","🌺","🌹"];
+
+    for(let i=0;i<50;i++){
+
+        const petal=document.createElement("div");
+
+        petal.className="petal";
+
+        petal.innerHTML=petals[Math.floor(Math.random()*petals.length)];
+
+        petal.style.left=Math.random()*100+"vw";
+
+        petal.style.animationDuration=
+        (4+Math.random()*4)+"s";
+
+        petal.style.fontSize=
+        (18+Math.random()*18)+"px";
+
+        document.body.appendChild(petal);
+
+        setTimeout(()=>{
+            petal.remove();
+        },8000);
+
+    }
+
+}
 
     closeModal.addEventListener('click',()=>{
 

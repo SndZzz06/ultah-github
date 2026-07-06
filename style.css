@@ -455,3 +455,109 @@ h1, h2, h3, .modal-title {
     }
 
 }
+
+.flower-left{
+
+    position:fixed;
+
+    left:8%;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:320px;
+
+    height:420px;
+
+    background:url("images/bunga-kiri.png") no-repeat center;
+
+    background-size:contain;
+
+    z-index:999;
+
+    animation:fadeFlower .8s;
+
+}
+
+.flower-right{
+
+    position:fixed;
+
+    right:8%;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:320px;
+
+    height:420px;
+
+    background:url("images/bunga-kanan.png") no-repeat center;
+
+    background-size:contain;
+
+    z-index:999;
+
+    animation:fadeFlower .8s;
+
+}
+
+@keyframes fadeFlower{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-50%) scale(.5);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(-50%) scale(1);
+
+    }
+
+}
+.flower-left,
+.flower-right{
+
+    filter:drop-shadow(0 0 35px #ff69b4);
+
+}
+
+.petal{
+
+    position:fixed;
+
+    top:-50px;
+
+    z-index:9999;
+
+    animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+    from{
+
+        transform:
+        translateY(-50px)
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+    }
+
+}
