@@ -1,9 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const scrollBtn = document.getElementById('scroll-down');
-    const gallerySection = document.getElementById('gallery');
-    
+    const dateSection = document.getElementById('date-calculator');
+    const bgm = document.getElementById('bgm');
+
     scrollBtn.addEventListener('click', () => {
-        gallerySection.scrollIntoView({ behavior: 'smooth' });
+
+        // Scroll ke Jejak Langkahmu
+        dateSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+        // Putar musik
+        bgm.volume = 0.4;
+        bgm.play().catch(err => console.log(err));
+
     });
 
     const observerOptions = {
@@ -118,15 +129,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const bgm = document.getElementById("bgm");
-
-// Atur volume (0.0 - 1.0)
-bgm.volume = 0.4;
-
-// Putar musik saat pertama kali pengguna mengklik halaman
-document.addEventListener("click", () => {
-    bgm.play().catch(err => {
-        console.log("Musik gagal diputar:", err);
-    });
-}, { once: true });
 });
