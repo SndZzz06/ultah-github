@@ -117,4 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('show');
         }
     });
+
+    const bgm = document.getElementById("bgm");
+
+// Atur volume (0.0 - 1.0)
+bgm.volume = 0.4;
+
+// Putar musik saat pertama kali pengguna mengklik halaman
+document.addEventListener("click", () => {
+    bgm.play().catch(err => {
+        console.log("Musik gagal diputar:", err);
+    });
+}, { once: true });
 });
